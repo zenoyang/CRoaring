@@ -879,6 +879,39 @@ static inline uint64_t _scalar_bitset_set_list_withcard(uint64_t *words, uint64_
     return card;
 }
 
+// todo(zeno) need simd
+static inline uint64_t _avx2_bitset_set_list_withcard(uint64_t *words, uint64_t card,
+                                                        const uint16_t *list, uint64_t length) {
+    uint64_t offset, load, newload, pos, index;
+    const uint16_t *end = list + length;
+    while (list != end) {
+        pos = *list;
+        offset = pos >> 6;  // => pos / 64;  offset [0, 1023]
+        index = pos % 64;
+        load = words[offset];
+        newload = load | (UINT64_C(1) << index);
+        card += (load ^ newload) >> index;
+        words[offset] = newload;
+        list++;
+    }
+    return card;
+}
+
+// todo(zeno) need simd
+static inline void _avx2_bitset_set_list(uint64_t *words, const uint16_t *list, uint64_t length) {
+    uint64_t offset, load, newload, pos, index;
+    const uint16_t *end = list + length;
+    while (list != end) {
+        pos = *list;
+        offset = pos >> 6;  // => pos / 64;  offset [0, 1023]
+        index = pos % 64;
+        load = words[offset];
+        newload = load | (UINT64_C(1) << index);
+        words[offset] = newload;
+        list++;
+    }
+}
+
 static inline void _scalar_bitset_set_list(uint64_t *words, const uint16_t *list, uint64_t length) {
     uint64_t offset, load, newload, pos, index;
     const uint16_t *end = list + length;
@@ -905,7 +938,8 @@ uint64_t bitset_clear_list(uint64_t *words, uint64_t card, const uint16_t *list,
 uint64_t bitset_set_list_withcard(uint64_t *words, uint64_t card,
                                   const uint16_t *list, uint64_t length) {
     if( croaring_avx2() ) {
-        return _asm_bitset_set_list_withcard(words, card, list, length);
+        return _avx2_bitset_set_list_withcard(words, card, list, length);
+        // return _asm_bitset_set_list_withcard(words, card, list, length);
     } else {
         return _scalar_bitset_set_list_withcard(words, card, list, length);
     }
@@ -913,7 +947,8 @@ uint64_t bitset_set_list_withcard(uint64_t *words, uint64_t card,
 
 void bitset_set_list(uint64_t *words, const uint16_t *list, uint64_t length) {
     if( croaring_avx2() ) {
-        _asm_bitset_set_list(words, list, length);
+        _avx2_bitset_set_list(words, list, length);
+        // _asm_bitset_set_list(words, list, length);
     } else {
         _scalar_bitset_set_list(words, list, length);
     }
