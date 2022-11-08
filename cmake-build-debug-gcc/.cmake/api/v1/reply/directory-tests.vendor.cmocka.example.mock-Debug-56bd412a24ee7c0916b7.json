@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "tests/vendor/cmocka/example/mock",
+		"source" : "tests/vendor/cmocka/example/mock"
+	}
+}

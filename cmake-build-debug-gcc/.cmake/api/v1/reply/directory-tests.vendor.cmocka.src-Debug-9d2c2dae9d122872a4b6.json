@@ -1,0 +1,60 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"tests/vendor/cmocka/src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 75,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"tests/vendor/cmocka/src/libcmocka.0.7.0.dylib",
+				"tests/vendor/cmocka/src/libcmocka.0.dylib"
+			],
+			"targetId" : "cmocka::@03b44978d0d5077b5a8d",
+			"targetIndex" : 39,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"tests/vendor/cmocka/src/libcmocka.dylib"
+			],
+			"targetId" : "cmocka::@03b44978d0d5077b5a8d",
+			"targetIndex" : 39,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "tests/vendor/cmocka/src",
+		"source" : "tests/vendor/cmocka/src"
+	}
+}

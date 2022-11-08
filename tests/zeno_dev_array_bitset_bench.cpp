@@ -205,8 +205,7 @@ static inline void _asm_bitset_set_list(uint64_t *words, const uint16_t *list, u
     }
 }
 
-int main_1() {
-    // int words_size = roaring::internal::BITSET_CONTAINER_SIZE_IN_WORDS; // 1024
+int main() {
     int words_size = 1024;
     uint64_t words[words_size];
     for (uint64_t i = 0; i < words_size; ++i) {
@@ -215,97 +214,61 @@ int main_1() {
 
     const size_t list_size = 65536;
     uint16_t list[list_size];
-    // uint16_t list[list_size] = {2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 10u, 11u, 12u, 13u, 14u, 15u, 16u, 65u};
     for (uint16_t i = 0; i <= list_size - 2; ++i) {
         list[i] = i;
     }
 
-    std::cout << "begin bench..." << std::endl;
+    std::cout << "start bench..." << std::endl;
 
-    double d = 1.0;
-    ankerl::nanobench::Bench().run("some double ops", [&] {
-        for (int i = 0; i < 1000; ++i) {
+    ankerl::nanobench::Bench bench;
+
+    int count = 100;
+    bench.run("scalar", [&] {
+        for (int i = 0; i < count; ++i) {
             _scalar_bitset_set_list(words, list, list_size);
         }
-        ankerl::nanobench::doNotOptimizeAway(d);
+        ankerl::nanobench::doNotOptimizeAway(words[0]);
+    });
+
+    bench.run("avx2", [&] {
+        for (int i = 0; i < count; ++i) {
+            _avx2_bitset_set_list(words, list, list_size);
+        }
+        ankerl::nanobench::doNotOptimizeAway(words[0]);
+    });
+
+    bench.run("avx2 v2", [&] {
+        for (int i = 0; i < count; ++i) {
+            _avx2_bitset_set_list2(words, list, list_size);
+        }
+        ankerl::nanobench::doNotOptimizeAway(words[0]);
+    });
+
+    bench.run("asm", [&] {
+        for (int i = 0; i < count; ++i) {
+            _asm_bitset_set_list(words, list, list_size);
+        }
+        ankerl::nanobench::doNotOptimizeAway(words[0]);
+    });
+
+
+    bench.run("scalar with card", [&] {
+        for (int i = 0; i < count; ++i) {
+            _scalar_bitset_set_list_withcard(words, 1024, list, list_size);
+        }
+        ankerl::nanobench::doNotOptimizeAway(words[0]);
+    });
+
+    bench.run("asm with card", [&] {
+        for (int i = 0; i < count; ++i) {
+            _asm_bitset_set_list_withcard(words, 1024, list, list_size);
+        }
+        ankerl::nanobench::doNotOptimizeAway(words[0]);
     });
 
     return 0;
 }
 
-int main_0() {
-    // int words_size = roaring::internal::BITSET_CONTAINER_SIZE_IN_WORDS; // 1024
-    int words_size = 1024;
-    uint64_t words[words_size];
-    for (uint64_t i = 0; i < words_size; ++i) {
-        words[i] = (uint64_t)(i + 1);
-    }
-
-    const size_t list_size = 65536;
-    uint16_t list[list_size];
-    // uint16_t list[list_size] = {2u, 3u, 4u, 5u, 6u, 7u, 8u, 9u, 10u, 11u, 12u, 13u, 14u, 15u, 16u, 65u};
-    for (uint16_t i = 0; i <= list_size - 2; ++i) {
-        list[i] = i;
-    }
-
-    std::cout << "begin bench..." << std::endl;
-
-    auto start1 = system_clock::now();
-    for (int i = 0; i < 100000; ++i) {
-        _scalar_bitset_set_list(words, list, list_size);
-    }
-    auto end1 = system_clock::now();
-    auto duration1 = duration_cast<milliseconds>(end1 - start1);
-    std::cout << "scalar cost: " << double(duration1.count()) * milliseconds::period::num << " ms" << std::endl;
 
 
-    auto start2 = system_clock::now();
-    for (int i = 0; i < 100000; ++i) {
-        _avx2_bitset_set_list(words, list, list_size);
-    }
-    auto end2 = system_clock::now();
-    auto duration2 = duration_cast<milliseconds>(end2 - start2);
-    std::cout << "avx2 cost: " << double(duration2.count()) * milliseconds::period::num << " ms" << std::endl;
-
-    auto start22 = system_clock::now();
-    for (int i = 0; i < 100000; ++i) {
-        _avx2_bitset_set_list(words, list, list_size);
-    }
-    auto end22 = system_clock::now();
-    auto duration22 = duration_cast<milliseconds>(end22 - start22);
-    std::cout << "avx2 2 cost: " << double(duration22.count()) * milliseconds::period::num << " ms" << std::endl;
-
-    auto start3 = system_clock::now();
-    for (int i = 0; i < 100000; ++i) {
-        _asm_bitset_set_list(words, list, list_size);
-    }
-    auto end3 = system_clock::now();
-    auto duration3 = duration_cast<milliseconds>(end3 - start3);
-    std::cout << "asm cost: " << double(duration3.count()) * milliseconds::period::num << " ms" << std::endl;
-
-    auto start4 = system_clock::now();
-    for (int i = 0; i < 100000; ++i) {
-        _scalar_bitset_set_list_withcard(words, 1024, list, list_size);
-    }
-    auto end4 = system_clock::now();
-    auto duration4 = duration_cast<milliseconds>(end4 - start4);
-    std::cout << "scalar with card cost: " << double(duration4.count()) * milliseconds::period::num << " ms" << std::endl;
-
-    auto start5 = system_clock::now();
-    for (int i = 0; i < 100000; ++i) {
-        _asm_bitset_set_list_withcard(words, 1024, list, list_size);
-    }
-    auto end5 = system_clock::now();
-    auto duration5 = duration_cast<milliseconds>(end5 - start5);
-    std::cout << "asm with card cost: " << double(duration5.count()) * milliseconds::period::num << " ms" << std::endl;
-
-    std::cout << "words: ";
-    for (int i = 0; i < words_size; ++i) {
-        std::cout << words[i] << ", ";
-    }
-    std::cout << std::endl;
-
-    return 0;
-}
-
-/// g++ --std=c++11 -O3 -march=native zeno_dev_array_bitset.cpp
+/// g++ -I../include --std=c++11 -O3 -march=native zeno_dev_array_bitset_bench.cpp

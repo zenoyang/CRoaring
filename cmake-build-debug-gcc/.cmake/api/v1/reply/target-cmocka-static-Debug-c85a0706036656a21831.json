@@ -1,0 +1,556 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "tests/vendor/cmocka/src/libcmocka-static.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_compile_options",
+			"include_directories",
+			"add_cpp_test",
+			"add_c_test",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"tests/vendor/cmocka/src/CMakeLists.txt",
+			"tools/cmake/FindCTargets.cmake",
+			"tests/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 87,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 96,
+				"parent" : 0
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 7,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 4
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 8,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 6
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 9,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 8
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 10,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 10
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 11,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 12
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 12,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 14
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 13,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 14,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 18
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 15,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 20
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 16,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 22
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 17,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 24
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 18,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 26
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 19,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 28
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 20,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 30
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 21,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 32
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 22,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 34
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 23,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 36
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 24,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 38
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 28,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 40
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 89,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -std=c11 -fPIC  -mavx2 -mbmi2  -Wall -Wextra -Wsign-compare -Wshadow -Wwrite-strings -Wpointer-arith -Winit-self   -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -fPIC"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-std=gnu99"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wmissing-prototypes"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=address"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wstrict-prototypes"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=strict-prototypes"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wwrite-strings"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=write-strings"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror-implicit-function-declaration"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=pointer-arith"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wdeclaration-after-statement"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=declaration-after-statement"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wreturn-type"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=return-type"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=uninitialized"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wimplicit-fallthrough"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=strict-overflow"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wstrict-overflow=2"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wno-format-zero-length"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wmissing-field-initializers"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wformat"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Werror=format-security"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-fno-common"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-fstack-protector-strong"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-fstack-clash-protection"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-DHAVE_CONFIG_H"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "/Users/zenoyang/workspace/CRoaring/cmake-build-debug-gcc/tests/vendor/cmocka/src"
+				},
+				{
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/vendor/cmocka/src"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/cpp_unit"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/PRIVATE"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/Users/zenoyang/workspace/CRoaring/vendor/cmocka"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/cpp_random_unit"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/cpp_example1"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/cpp_example2"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/zeno_debug_union"
+				},
+				{
+					"backtrace" : 15,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/zeno_dev_array_bitset"
+				},
+				{
+					"backtrace" : 17,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/zeno_dev_array_bitset_bench"
+				},
+				{
+					"backtrace" : 19,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/c_example1"
+				},
+				{
+					"backtrace" : 21,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/array_container_unit"
+				},
+				{
+					"backtrace" : 23,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/bitset_container_unit"
+				},
+				{
+					"backtrace" : 25,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/mixed_container_unit"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/run_container_unit"
+				},
+				{
+					"backtrace" : 29,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/toplevel_unit"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/util_unit"
+				},
+				{
+					"backtrace" : 33,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/format_portability_unit"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/robust_deserialization_unit"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/container_comparison_unit"
+				},
+				{
+					"backtrace" : 39,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/add_offset"
+				},
+				{
+					"backtrace" : 41,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/realdata_unit"
+				},
+				{
+					"backtrace" : 42,
+					"path" : "/Users/zenoyang/workspace/CRoaring/cmake-build-debug-gcc/tests/vendor/cmocka"
+				},
+				{
+					"backtrace" : 42,
+					"path" : "/Users/zenoyang/workspace/CRoaring/tests/vendor/cmocka/include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "cmocka-static::@03b44978d0d5077b5a8d",
+	"name" : "cmocka-static",
+	"nameOnDisk" : "libcmocka-static.a",
+	"paths" : 
+	{
+		"build" : "tests/vendor/cmocka/src",
+		"source" : "tests/vendor/cmocka/src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "tests/vendor/cmocka/src/cmocka.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

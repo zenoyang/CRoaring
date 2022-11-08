@@ -1,0 +1,23 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G Ninja -S /Users/zenoyang/workspace/CRoaring -B /Users/zenoyang/workspace/CRoaring/cmake-build-debug-gcc
+-- BENCHMARK_DATA_DIR: /Users/zenoyang/workspace/CRoaring/benchmarks/realdata/
+-- TEST_DATA_DIR: /Users/zenoyang/workspace/CRoaring/tests/testdata/
+-- Building a static library.
+-- ROARING_LIB_TYPE: STATIC
+-- Library output directory (does not apply to Visual Studio): /Users/zenoyang/workspace/CRoaring/cmake-build-debug-gcc
+-- Importing vendor/cmocka (https://cmocka.org/files/1.1/cmocka-1.1.5.tar.xz)
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- CMAKE_BUILD_TYPE: Debug
+-- ROARING_DISABLE_NEON: OFF
+-- ROARING_BUILD_STATIC: ON
+-- ROARING_LINK_STATIC: OFF
+-- ROARING_BUILD_LTO: OFF
+-- ROARING_SANITIZE: OFF
+-- CMAKE_C_COMPILER: /usr/bin/gcc
+-- CMAKE_C_FLAGS:  -std=c11 -fPIC  -mavx2 -mbmi2  -Wall -Wextra -Wsign-compare -Wshadow -Wwrite-strings -Wpointer-arith -Winit-self  
+-- CMAKE_C_FLAGS_DEBUG: -g
+-- CMAKE_C_FLAGS_RELEASE: -O3 -DNDEBUG
+-- ROARING_EXCEPTIONS: ON
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/zenoyang/workspace/CRoaring/cmake-build-debug-gcc
